@@ -11,26 +11,23 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Customer
+ * Class Supplier
  * 
  * @property int $id
  * @property string $name
  * @property string|null $phone
- * @property string|null $facebook_profile_url
- * @property string|null $other_url
  * @property float $opening_balance
  * @property string $balance_type
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * 
- * @property CustomerAddress|null $customer_address
- * @property Collection|Sale[] $sales
+ * @property Collection|Purchase[] $purchases
  *
  * @package App\Models
  */
-class Customer extends Model
+class Supplier extends Model
 {
-	protected $table = 'customers';
+	protected $table = 'suppliers';
 
 	protected $casts = [
 		'opening_balance' => 'float'
@@ -39,19 +36,12 @@ class Customer extends Model
 	protected $fillable = [
 		'name',
 		'phone',
-		'facebook_profile_url',
-		'other_url',
 		'opening_balance',
 		'balance_type'
 	];
 
-	public function customer_address()
+	public function purchases()
 	{
-		return $this->hasOne(CustomerAddress::class);
-	}
-
-	public function sales()
-	{
-		return $this->hasMany(Sale::class);
+		return $this->hasMany(Purchase::class);
 	}
 }
