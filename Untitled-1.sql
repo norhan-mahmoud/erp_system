@@ -95,17 +95,17 @@ CREATE TABLE `batches` (
   KEY `batches_status_index` (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-DROP TABLE IF EXISTS `customers`;
-CREATE TABLE `customers` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `opening_balance` decimal(12,2) NOT NULL DEFAULT '0.00',
-  `balance_type` enum('credit','debit','none') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'none',
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- DROP TABLE IF EXISTS `customers`;
+-- CREATE TABLE `customers` (
+--   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+--   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+--   `opening_balance` decimal(12,2) NOT NULL DEFAULT '0.00',
+--   `balance_type` enum('credit','debit','none') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'none',
+--   `created_at` timestamp NULL DEFAULT NULL,
+--   `updated_at` timestamp NULL DEFAULT NULL,
+--   PRIMARY KEY (`id`)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `eggs_production`;
 CREATE TABLE `eggs_production` (
