@@ -182,16 +182,16 @@ CREATE TABLE `hatching_outputs` (
   CONSTRAINT `hatching_outputs_hatching_cycle_id_foreign` FOREIGN KEY (`hatching_cycle_id`) REFERENCES `hatching_cycles` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-DROP TABLE IF EXISTS `items`;
-CREATE TABLE `items` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` enum('feed','medicine','egg','quail_live','quail_cleaned') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `unit` enum('kg','piece') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- DROP TABLE IF EXISTS `items`;
+-- CREATE TABLE `items` (
+--   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+--   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `type` enum('feed','medicine','egg','quail_live','quail_cleaned') COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `unit` enum('kg','piece') COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `created_at` timestamp NULL DEFAULT NULL,
+--   `updated_at` timestamp NULL DEFAULT NULL,
+--   PRIMARY KEY (`id`)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `opening_adjustments`;
 CREATE TABLE `opening_adjustments` (
