@@ -7,34 +7,34 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-DROP TABLE IF EXISTS `asset_depreciations`;
-CREATE TABLE `asset_depreciations` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `asset_id` bigint unsigned NOT NULL,
-  `month` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value` decimal(12,2) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `asset_depreciations_asset_id_foreign` (`asset_id`),
-  CONSTRAINT `asset_depreciations_asset_id_foreign` FOREIGN KEY (`asset_id`) REFERENCES `assets` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- DROP TABLE IF EXISTS `asset_depreciations`;
+-- CREATE TABLE `asset_depreciations` (
+--   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+--   `asset_id` bigint unsigned NOT NULL,
+--   `month` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `value` decimal(12,2) NOT NULL,
+--   `created_at` timestamp NULL DEFAULT NULL,
+--   `updated_at` timestamp NULL DEFAULT NULL,
+--   PRIMARY KEY (`id`),
+--   KEY `asset_depreciations_asset_id_foreign` (`asset_id`),
+--   CONSTRAINT `asset_depreciations_asset_id_foreign` FOREIGN KEY (`asset_id`) REFERENCES `assets` (`id`) ON DELETE CASCADE
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-DROP TABLE IF EXISTS `assets`;
-CREATE TABLE `assets` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `purchase_value` decimal(12,2) NOT NULL,
-  `salvage_value` decimal(12,2) NOT NULL DEFAULT '0.00',
-  `useful_life_months` int unsigned NOT NULL,
-  `purchase_date` date NOT NULL,
-  `start_date` date NOT NULL,
-  `accumulated_depreciation` decimal(12,2) NOT NULL DEFAULT '0.00',
-  `is_opening` tinyint(1) NOT NULL DEFAULT '0',
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- DROP TABLE IF EXISTS `assets`;
+-- CREATE TABLE `assets` (
+--   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+--   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `purchase_value` decimal(12,2) NOT NULL,
+--   `salvage_value` decimal(12,2) NOT NULL DEFAULT '0.00',
+--   `useful_life_months` int unsigned NOT NULL,
+--   `purchase_date` date NOT NULL,
+--   `start_date` date NOT NULL,
+--   `accumulated_depreciation` decimal(12,2) NOT NULL DEFAULT '0.00',
+--   `is_opening` tinyint(1) NOT NULL DEFAULT '0',
+--   `created_at` timestamp NULL DEFAULT NULL,
+--   `updated_at` timestamp NULL DEFAULT NULL,
+--   PRIMARY KEY (`id`)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `batch_events`;
 CREATE TABLE `batch_events` (
