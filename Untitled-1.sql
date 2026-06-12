@@ -8,17 +8,17 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 -- DROP TABLE IF EXISTS `asset_depreciations`;
--- CREATE TABLE `asset_depreciations` (
---   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
---   `asset_id` bigint unsigned NOT NULL,
---   `month` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
---   `value` decimal(12,2) NOT NULL,
---   `created_at` timestamp NULL DEFAULT NULL,
---   `updated_at` timestamp NULL DEFAULT NULL,
---   PRIMARY KEY (`id`),
---   KEY `asset_depreciations_asset_id_foreign` (`asset_id`),
---   CONSTRAINT `asset_depreciations_asset_id_foreign` FOREIGN KEY (`asset_id`) REFERENCES `assets` (`id`) ON DELETE CASCADE
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `asset_depreciations` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `asset_id` bigint unsigned NOT NULL,
+  `month` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` decimal(12,2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `asset_depreciations_asset_id_foreign` (`asset_id`),
+  CONSTRAINT `asset_depreciations_asset_id_foreign` FOREIGN KEY (`asset_id`) REFERENCES `assets` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- DROP TABLE IF EXISTS `assets`;
 -- CREATE TABLE `assets` (
@@ -324,17 +324,17 @@ CREATE TABLE `stock_movements` (
   CONSTRAINT `stock_movements_warehouse_id_foreign` FOREIGN KEY (`warehouse_id`) REFERENCES `warehouses` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-DROP TABLE IF EXISTS `suppliers`;
-CREATE TABLE `suppliers` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `opening_balance` decimal(12,2) NOT NULL DEFAULT '0.00',
-  `balance_type` enum('credit','debit','none') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'none',
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- DROP TABLE IF EXISTS `suppliers`;
+-- CREATE TABLE `suppliers` (
+--   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+--   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+--   `opening_balance` decimal(12,2) NOT NULL DEFAULT '0.00',
+--   `balance_type` enum('credit','debit','none') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'none',
+--   `created_at` timestamp NULL DEFAULT NULL,
+--   `updated_at` timestamp NULL DEFAULT NULL,
+--   PRIMARY KEY (`id`)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -350,14 +350,14 @@ CREATE TABLE `users` (
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-DROP TABLE IF EXISTS `warehouses`;
-CREATE TABLE `warehouses` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- DROP TABLE IF EXISTS `warehouses`;
+-- CREATE TABLE `warehouses` (
+--   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+--   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+--   `created_at` timestamp NULL DEFAULT NULL,
+--   `updated_at` timestamp NULL DEFAULT NULL,
+--   PRIMARY KEY (`id`)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 
